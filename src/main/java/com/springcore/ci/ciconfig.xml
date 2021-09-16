@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- <bean class="com.springcore.ci.Certi" name="certi">
+    	<constructor-arg value="Java" />
+    
+    </bean> -->
+    
+    <!-- now by using c schema basically for constructor injection -->
+    <!-- And p schema is basically used for setter injection -->
+    <bean class="com.springcore.ci.Certi" name="certi" c:name="python" />
+    
+
+	<bean class="com.springcore.ci.Person" name="person" c:name="sagar" c:personId="12" c:certi-ref="certi">
+	
+	<constructor-arg name="list">
+			<list>
+				<value>974983234</value>
+				<value>974955464</value>
+				<value>974555564</value>
+				<value>973455564</value>
+			</list>
+	</constructor-arg>	
+	<!-- it is a constructor injection -->
+	
+	<!-- <constructor-arg value="sagar" />
+	<constructor-arg value="12" type="int" />
+	<constructor-arg ref="certi" />
+		 -->
+	</bean>
+	
+	<bean class="com.springcore.ci.Addition" name="add">
+		<constructor-arg value="10" type="double" index="1" />
+		<constructor-arg value="18" type="double" index="0" />
+		
+	
+	</bean>
+		
+</beans>

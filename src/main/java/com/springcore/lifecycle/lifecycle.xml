@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:annotation-config />
+    
+    <!-- this is used to enable all Annotation file in javabean -->
+	
+	<bean class="com.springcore.lifecycle.Samosa" name="s1" init-method="init" destroy-method="destroy">
+		<property name="price" value="20" />
+		
+	</bean>
+	
+	<bean class="com.springcore.lifecycle.Pepsi" name="p">
+	<property name="price" value="35" />
+	
+	</bean>
+	<bean class="com.springcore.lifecycle.Example" name="example">
+		<property name="subject" value="English" />
+	</bean>
+	<!-- for using particular Annotation we have to use there class name with there package such as given below. -->
+	<!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" /> -->
+		
+</beans>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!-- standalone list -->
+
+	<util:list list-class="java.util.Vector" id="gold">
+		<value>Satyam</value>
+		<value>aman</value>
+		<value>rajesh</value>
+		<value>saurav</value>
+		<value>manish</value>
+
+	</util:list>
+	
+	<!-- standalone map -->
+	<util:map map-class="java.util.HashMap" id="course">
+	
+	<entry key="Spring Framwork" value="5000" />
+	<entry key="Hybernat Framwork" value="3000" />
+	<entry key="dejango framwork" value="1500" />
+	
+	</util:map>
+	
+	<!-- standalone set -->
+	
+	<util:set set-class="java.util.TreeSet" id="set">
+		<value>Netaji subhas institute of technology</value>
+		<value>IIT College</value>
+		<value>BHU College</value>
+	</util:set>
+	
+	<!-- standalone properties -->
+	
+	<util:properties id="dbconfig">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">sagarprince</prop>
+		<prop key="password">123056</prop>
+		<prop key="url">mysql:"jdbc://localhost:3306/database</prop>
+	
+	</util:properties>
+
+	<bean class="com.springcore.standalone.collection.Demo"
+		name="demo">
+		<!-- <property name="friend"> <ref bean="gold" /> </property> -->
+		<property name="friend" ref="gold" />
+		<property name="feestructure" ref="course" />
+		<property name="college" ref="set" />
+		<property name="connection" ref="dbconfig" />
+	</bean>
+
+	<bean class="com.springcore.standalone.collection.Demo"
+		name="demo2">
+		<!-- <property name="friend"> <ref bean="gold" /> </property> -->
+		<property name="friend" ref="gold" />
+		<property name="connection" ref="dbconfig" />
+
+	</bean>
+
+</beans>
